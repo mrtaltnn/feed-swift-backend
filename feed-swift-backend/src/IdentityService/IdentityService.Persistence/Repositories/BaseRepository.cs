@@ -1,12 +1,10 @@
-using System.Linq.Expressions;
 using IdentityService.Domain.Entities;
-using IdentityService.Domain.Interfaces;
 using IdentityService.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdentityService.Persistence.Repositories;
 
-public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     private readonly DbContext _dbContext;
     protected readonly DbSet<TEntity> DbSet;

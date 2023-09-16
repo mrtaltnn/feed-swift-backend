@@ -2,7 +2,7 @@ using IdentityService.Domain.Entities;
 
 namespace IdentityService.Domain.Interfaces.Repositories;
 
-public interface IUserRepository: IRepository<User>
+public interface IUserRepository: IBaseRepository<User>
 {
     Task<User?> GetByEmailAsync(string email);
 }

@@ -2,7 +2,7 @@ using IdentityService.Domain.Entities;
 
 namespace IdentityService.Domain.Interfaces.Repositories;
 
-public interface IRepository<TEntity>: IDisposable where TEntity :BaseEntity
+public interface IBaseRepository<TEntity>: IDisposable where TEntity :BaseEntity
 {
     IEnumerable<TEntity> Get();
     Task<IEnumerable<TEntity>> GetAsync();
