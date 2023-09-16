@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.Domain.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.Persistence.Tests", "src\_tests\IdentityService\IdentityService.Persistence.Tests\IdentityService.Persistence.Tests.csproj", "{118112AD-FF3A-4942-81F7-630FC9D6FFC5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService", "NotificationService", "{09755A20-9070-4A2C-A9E2-EDE11A539714}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,7 @@ Global
 		{943CBA7B-164D-4516-A1E0-BE03AF63EE0B} = {FB8422EF-3072-44FD-BD85-FEE0AB507D1A}
 		{59162D1A-9D14-4A45-96B2-C1F17CA7B0DA} = {FB8422EF-3072-44FD-BD85-FEE0AB507D1A}
 		{118112AD-FF3A-4942-81F7-630FC9D6FFC5} = {FB8422EF-3072-44FD-BD85-FEE0AB507D1A}
+		{09755A20-9070-4A2C-A9E2-EDE11A539714} = {8B611FCB-2B07-4942-9736-858C6EC9E0DC}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{97B8B8A7-162F-45D8-9B90-9EED58BFB8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
