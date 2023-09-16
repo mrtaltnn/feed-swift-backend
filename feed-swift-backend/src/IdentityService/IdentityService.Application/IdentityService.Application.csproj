@@ -11,4 +11,8 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\_libs\Shared.Helper\Shared.Helper.csproj" />
+    </ItemGroup>
+
 </Project>
