@@ -14,4 +14,12 @@
 
 
 
+    <ItemGroup>
+      <ProjectReference Include="..\IdentityService.Application\IdentityService.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\IdentityService.Application\IdentityService.Application.csproj" />
+    </ItemGroup>
+
 </Project>

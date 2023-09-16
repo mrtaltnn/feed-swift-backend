@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using IdentityService.Application.Model;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 
@@ -6,7 +6,7 @@ namespace IdentityService.Persistence;
 
 public static class PersistenceRegistration
 {
-    public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPersistence(this IServiceCollection services, AppSettings appSettings)
     {
         //TODO db context
         return services;
