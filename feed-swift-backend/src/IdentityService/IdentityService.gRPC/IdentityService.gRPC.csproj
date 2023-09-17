@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Server"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
         <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.57.0" />
         <PackageReference Include="Grpc.AspNetCore.Web" Version="2.57.0" />
@@ -28,9 +24,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\_libs\Shared.Helper\Shared.Helper.csproj" />
+      <ProjectReference Include="..\..\_libs\Shared.Proto\Shared.Proto.csproj" />
       <ProjectReference Include="..\IdentityService.Application\IdentityService.Application.csproj" />
       <ProjectReference Include="..\IdentityService.Persistence\IdentityService.Persistence.csproj" />
     </ItemGroup>
+
 
 
 </Project>

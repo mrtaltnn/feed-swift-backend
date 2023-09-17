@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option csharp_namespace = "IdentityService.gRPC";
+option csharp_namespace = "Shared.Proto.IdentityService";
 
-package greet;
+package IdentityServiceProto;
 
 // The greeting service definition.
 service Greeter {

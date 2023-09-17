@@ -1,5 +1,6 @@
 using Grpc.Core;
-using IdentityService.gRPC;
+using Shared.Proto.IdentityService;
+
 
 namespace IdentityService.gRPC.Services;
 
