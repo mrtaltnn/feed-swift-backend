@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Nest;
 
 namespace IdentityService.Domain.Entities;
 
@@ -23,4 +24,15 @@ public abstract class BaseEntity
 
     public void UnDelete() => IsDeleted = false;
     
+}
+
+public abstract class BaseElasticSearchEntity
+{
+    public int Id { get; private set; }
+
+    public CompletionField Suggest { get; set; }
+    
+    public string SearchingArea { get; set; }
+    
+    public double? Score { get; set; }
 }
