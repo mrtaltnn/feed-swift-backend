@@ -43,7 +43,6 @@ public sealed class UserConfig: BaseConfig<User>
             .HasMaxLength(MaxLengths.User.DeviceId);
 
         builder.HasData(new User(
-            1,
             "admin@email.com",
             "Admin",
             "User",

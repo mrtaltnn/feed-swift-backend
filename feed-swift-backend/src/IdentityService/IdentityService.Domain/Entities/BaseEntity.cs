@@ -16,10 +16,6 @@ public abstract class BaseEntity
     [Timestamp]
     public uint RowVersion { get; private set; }
 
-    protected BaseEntity(int id) => Id = id;
-
-    public void SetId(int id) => Id = id;
-
     public void Delete() => IsDeleted = true;
 
     public void UnDelete() => IsDeleted = false;

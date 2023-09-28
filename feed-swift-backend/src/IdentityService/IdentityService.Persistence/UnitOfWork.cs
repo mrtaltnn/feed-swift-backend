@@ -1,6 +1,4 @@
 using IdentityService.Domain.Interfaces.Repositories;
-using IdentityService.Persistence.Database;
-using IdentityService.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Logging;
@@ -20,21 +18,27 @@ public sealed class UnitOfWork<TContext> : IUnitOfWork where TContext : DbContex
     
     public async Task<IDbContextTransaction> BeginTransactionAsync() => await _context.Database.BeginTransactionAsync();
     
-    public async Task<bool> CommitAsync()
+    public async Task<bool> CommitAsync(bool useTransaction = true)
     {
         await using var transaction = await BeginTransactionAsync();
         try
         {
             await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
+            if(useTransaction)
+                await transaction.CommitAsync();
             return true;
         }
         catch (DbUpdateException dbUpdateException)
         {
             _logger.LogError(dbUpdateException, "An error occured during commiting changes");
-            await transaction.RollbackAsync();
-            return false;
+            if(useTransaction)
+                await transaction.RollbackAsync();
         }
+        catch (Exception exception)
+        {
+            _logger.LogError(exception, "An error occured during saving changes");
+        }
+        return false;
     }
 
     public async ValueTask DisposeAsync() => await _context.DisposeAsync();

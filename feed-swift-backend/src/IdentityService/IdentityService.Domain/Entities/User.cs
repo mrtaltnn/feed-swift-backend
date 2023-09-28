@@ -15,11 +15,10 @@ public class User:BaseEntity
     public string DeviceId { get; private set; }
     public DateTimeOffset LastLoggedInDate { get; private set; }
     
-
-
+    
     public string FullName => $"{FirstName} {LastName}";
 
-    public User(int id, string email, string firstName, string lastName, string password, string phoneNumber,UserRole role, string deviceId) : base(id)
+    public User(string email, string firstName, string lastName, string password, string phoneNumber,UserRole role, string deviceId) 
     {
         Email = email;
         FirstName = firstName;
@@ -29,4 +28,6 @@ public class User:BaseEntity
         Role = role;
         DeviceId = deviceId;
     }
+    
+    public void SetPassword(string password) => Password = password;
 }

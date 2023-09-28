@@ -10,5 +10,7 @@ public sealed class UserRepository: BaseRepository<User>,IUserRepository
     {
     }
 
-    public Task<User?> GetByEmailAsync(string email) => DbSet.SingleOrDefaultAsync(x => x.Email == email);
+    public Task<User?> GetByEmailAsync(string email) => DbSet.AsNoTracking().SingleOrDefaultAsync(x => x.Email == email);
+    public Task<bool> IsExistByEmailAsync(string email) => DbSet.AsNoTracking().AnyAsync(x => x.Email == email);
+    
 }

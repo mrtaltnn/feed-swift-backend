@@ -27,7 +27,7 @@ try
 
     // Add services to the container.
     builder.Services.AddSingleton(appSettings);
-    builder.Services.AddPersistence(appSettings).AddApplication(appSettings).AddDomain(appSettings).AddGrpc(
+    builder.Services.AddPersistence(appSettings).AddApplication(appSettings).AddDomain().AddGrpc(
         options =>
         {
             {
