@@ -12,19 +12,17 @@ public sealed class UnitOfWork<TContext> : IUnitOfWork where TContext : DbContex
     private readonly TContext _context;
     private readonly ILogger<UnitOfWork<TContext>> _logger;
 
-    public UnitOfWork(TContext context, ILogger<UnitOfWork<TContext>> logger,IUserRepository userRepository)
+    public UnitOfWork(TContext context, ILogger<UnitOfWork<TContext>> logger)
     {
         _context = context;
         _logger = logger;
-        Users = userRepository;
     }
     
-    public IUserRepository Users { get; }
     public async Task<IDbContextTransaction> BeginTransactionAsync() => await _context.Database.BeginTransactionAsync();
     
     public async Task<bool> CommitAsync()
     {
-        await using var transaction = await _context.Database.BeginTransactionAsync();
+        await using var transaction = await BeginTransactionAsync();
         try
         {
             await _context.SaveChangesAsync();
