@@ -23,7 +23,7 @@ try
     configuration.Bind(nameof(AppSettings), appSettings);
     
     builder.Services.AddSingleton(appSettings);
-    builder.Services.AddPersistence(appSettings).AddApplication(appSettings).AddDomain(appSettings).AddControllers();
+    builder.Services.AddPersistence(appSettings).AddApplication(appSettings).AddDomain().AddControllers();
 
  // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
  builder.Services.AddEndpointsApiExplorer();

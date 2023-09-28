@@ -5,5 +5,5 @@ namespace IdentityService.Domain.Interfaces.Repositories;
 public interface IUnitOfWork : IAsyncDisposable
 {
     Task<IDbContextTransaction> BeginTransactionAsync();
-    public Task<bool> CommitAsync();
+    public Task<bool> CommitAsync(bool useTransaction = true);
 }
